@@ -56,5 +56,8 @@ async def main_stream():
 
 
 if __name__ == "__main__":
+    # not stream
     # main()
+
+    # stream
     asyncio.run(main_stream())
