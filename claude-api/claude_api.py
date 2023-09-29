@@ -206,7 +206,7 @@ class Client:
             await asyncio.sleep(0.01)
         while not q.empty():
             answer = await q.get()  # 在主线程中获取结果
-            yield answer["completion"]
+            yield answer
             if answer["stop_reason"] is None:
                 while q.empty():
                     await asyncio.sleep(0.01)

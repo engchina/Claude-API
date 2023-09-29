@@ -52,7 +52,7 @@ async def main_stream():
 
         print("Chatbot:", end='')
         async for response in claude.send_message_stream(user_input, conversation_id):
-            print(response, end='')
+            print(response["completion"], end='')
         print()
 
 
