@@ -49,10 +49,11 @@ async def main_stream():
         if not conversation_id:
             conversation = claude.create_new_chat()
             conversation_id = conversation['uuid']
-            print("Chatbot:", end='')
-            async for response in claude.send_message_stream(user_input, conversation_id):
-                print(response["completion"], end='')
-            print()
+
+        print("Chatbot:", end='')
+        async for response in claude.send_message_stream(user_input, conversation_id):
+            print(response, end='')
+        print()
 
 
 if __name__ == "__main__":
