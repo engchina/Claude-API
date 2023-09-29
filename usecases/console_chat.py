@@ -1,12 +1,10 @@
 import asyncio
-import json
 import os
 from claude_api import Client
 
 
 def get_cookie():
-    # cookie = os.environ.get('cookie')
-    cookie = "sessionKey=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"
+    cookie = os.environ.get('cookie')
     if not cookie:
         raise ValueError("Please set the 'cookie' environment variable.")
     return cookie
